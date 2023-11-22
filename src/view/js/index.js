@@ -48,9 +48,50 @@ fetch(`${url_server}/cadastro`, {
     fetch(`${url_server}/pessoas`)
         .then(response => response.json())
         .then(data => {
-            //console.log(data.rows);
-            data.forEach(pessoa =>{
-              console.log(pessoa.endereco);
-            });
+              console.log(data);
         });
+}
+function listarPessoas() {
+
+  // faça algo antes de montar a tabela, SE NECESSÁRIO
+
+  fetch(`${url_server}/pessoas`)
+      .then(response => response.json())
+      .then(data => {
+          // Inserindo os dados da pessoa na tabela
+          // fazendo um loop usando forEach para percorrer todos os dados retornados pelo servidor
+          data.forEach(pessoa => {
+              // Criando os elementos HTML
+              const tabela = document.querySelector('table');
+              const elementTr = document.createElement('tr');
+              const tdNome = document.createElement('th');
+              const tdCpf = document.createElement('th');
+              const tdDataNascimento = document.createElement('th');
+              const tdTelefone = document.createElement('th');
+              const tdEndereco = document.createElement('th');
+              const tdAltura = document.createElement('th');
+              const tdPeso = document.createElement('th');
+
+              // Inserindo os dados da pessoa no elemento	
+              tdNome.textContent = pessoa.nome;
+              tdCpf.textContent = pessoa.cpf;
+              tdDataNascimento.textContent = pessoa.data_nascimento;
+              tdTelefone.textContent = pessoa.telefone;
+              tdEndereco.textContent = pessoa.endereco;
+              tdAltura.textContent = pessoa.altura;
+              tdPeso.textContent = pessoa.peso;
+
+              // Inserindo os elementos nas linhas da tabela (tr => TableRow)
+              elementTr.appendChild(tdNome);
+              elementTr.appendChild(tdCpf);
+              elementTr.appendChild(tdDataNascimento);
+              elementTr.appendChild(tdTelefone);
+              elementTr.appendChild(tdEndereco);
+              elementTr.appendChild(tdAltura);
+              elementTr.appendChild(tdPeso);
+
+              // Adicionando a linha com as informações na tabela
+              tabela.appendChild(elementTr);
+      });
+});
 }
