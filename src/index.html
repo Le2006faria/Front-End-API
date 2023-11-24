@@ -17,45 +17,46 @@
         <h2 class="pessoa">Pessoa</h2>
     </header>
 
+    <form>
     <div class="TODOS">
 
     <div class="Um">
 
     <div class="a">
         <span class="Nome" for="exampleInputPassword1">Nome</span>
-        <input class="Nome2" name="Nome" placeholder="Digite o seu Nome">
+        <input class="Nome2" name="Nome" placeholder="Digite o seu Nome" required minlength="3" maxlength="150">
     </div>
 
     <div class="b">
         <span class="CPF" for="exampleInputPassword2">CPF</span>
-        <input class="CPF2" name="CPF" placeholder="00000000000-00">
+        <input class="CPF2" name="CPF" placeholder="00000000000-00" required minlength="11" maxlength="12">
     </div>
 
     <div class="c">
         <span class="DataDeNascimento" for="exampleInputPassword3">Data de nascimento</span>
-        <input class="DataDeNascimento2" name="DataDeNascimento" placeholder="dd/mm/aaaa">
+        <input class="DataDeNascimento2" name="DataDeNascimento" placeholder="dd/mm/aaaa" required minlength="8" maxlength="10">
     </div>
 
     <div class="d">
         <span class="Telefone" for="exampleInputPassword4">Telefone</span>
-        <input class="Telefone2" name="Telefone" placeholder="+00 00 00000-0000">
+        <input class="Telefone2" name="Telefone" placeholder="+00 00 00000-0000" required minlength="9" maxlength="19">
     </div>
 
     </div>
     <div class="DOIS">
     <div class="e">
         <span class="Endereco" for="exampleInputPassword5">Endereço</span>
-        <input class="Endereco2" name="Endereco" placeholder="Digite seu endereço">
+        <input class="Endereco2" name="Endereco" placeholder="Digite seu endereço" required minlength="3" maxlength="80">
     </div>
 
     <div class="f">
         <span class="Altura" for="exampleInputPassword6">Altura</span>
-        <input class="Altura2" name="Altura" placeholder="000cm">
+        <input class="Altura2" name="Altura" placeholder="000cm" required minlength="3" maxlength="3">
     </div>
 
     <div class="g">
         <span class="Peso" for="exampleInputPassword7">Peso</span>
-        <input class="Peso2" name="Peso" placeholder="00Kg">
+        <input class="Peso2" name="Peso" placeholder="00Kg" required minlength="2" maxlength="3">
     </div>
 
     <div class="h">
@@ -65,6 +66,8 @@
     </div>
 
     </div>
+
+    </form>
 
     <script src="view/js/index.js"></script>
 </body>
